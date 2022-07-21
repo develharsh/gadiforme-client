@@ -1,0 +1,68 @@
+.sidepanel {
+  position: fixed;
+  min-height: 90vh;
+  width: 80vw;
+  top: 4rem;
+  left: auto;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.sidepanel-open {
+  right: 0vw;
+  animation-name: open;
+  animation-duration: 0.5s;
+}
+.sidepanel-close {
+  right: -80vw;
+  animation-name: close;
+  animation-duration: 0.5s;
+}
+
+@keyframes open {
+  from {
+    right: -80vw;
+  }
+  to {
+    right: 0vw;
+  }
+}
+
+@keyframes close {
+  from {
+    right: 0vw;
+  }
+  to {
+    right: -80vw;
+  }
+}
+.sidepanel > div {
+  margin: 4rem 0;
+  text-align: center;
+}
+.sidepanel > div > a {
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #3b82f6;
+  border-radius: 23px;
+  padding: 5px 10px;
+  background-color: #3b82f6;
+  margin-top: 2rem;
+  color: #fff;
+}
+.sidepanel > div > a:hover {
+  background-color: #fff;
+  color: #3b82f6;
+}
+/* tab */
+@media (min-width: 40rem) {
+  .sidepanel {
+    display: none;
+  }
+}
+
+/*lap */
+@media (min-width: 80rem) {
+  .sidepanel {
+    display: none;
+  }
+}

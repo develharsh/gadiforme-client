@@ -1,16 +1,54 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+  margin: 0;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap");
+@import url("./Home.module.css");
+@import url("./components/toast/toast.css");
+@import url("./components/design/navbar.css");
+@import url("./components/design/sidepanel.css");
+
+/*Common Begin*/
+.text-bold {
+  font-weight: bold;
+}
+.navcolour {
+  color: #3b82f6;
+}
+/*Common End*/
+
+/*Navbar CSS Begin*/
+.p-menuitem-text,
+.p-menuitem-icon,
+.p-submenu-icon {
+  color: #a855f7 !important;
+}
+
+.p-menubar :nth-child(5) {
+  background-color: #a855f7;
+}
+.p-menubar :nth-child(5) :hover {
+  background-color: #000 !important;
+}
+
+.p-menubar :nth-child(5) .p-menuitem-text {
+  color: #fff !important;
+}
+
+.p-menubar :nth-child(5) .p-menuitem-icon {
+  color: #fff !important;
+}
+
+.p-menubar :nth-child(5) .p-submenu-icon {
+  color: #fff !important;
+}
+.p-accordion-header-link {
+  /* Content */
+  color: #000 !important;
+  background-color: #fff !important;
+}
+.heightBelowNav {
+  height: 4rem;
+}
+/*Navbar CSS Begin*/
