@@ -12,11 +12,11 @@ const reducers = (state, action) => {
         ...state,
         user: action.payload,
       };
-    case ACTIONS.GLOBAL_LOADING:
-      return {
-        ...state,
-        globalLoading: action.payload,
-      };
+    // case ACTIONS.GLOBAL_LOADING:
+    //   return {
+    //     ...state,
+    //     globalLoading: action.payload,
+    //   };
     case ACTIONS.LOADING:
       return {
         ...state,

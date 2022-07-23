@@ -27,21 +27,34 @@ export default function Navbar() {
       <div className="navmaindiv">
         <Link href="/">
           <a className="text-900">
-            mo<span>refined</span>
+            Gadi<span>For</span>
+            <span>Me</span>
           </a>
         </Link>
         <div>
-          <Link href="/request-for-mock-interview">
-            <a className="no-underline navcolour">Refer Me</a>
+          <Link href="/add-trip">
+            <a className="no-underline navcolour">Gadi`s for Your Trip</a>
           </Link>
-          <Link href="/pricing">
-            <a className="no-underline navcolour">Pricing</a>
+
+          {user && (
+            <Link href="/my-trips">
+              <a className="no-underline navcolour">My Trips</a>
+            </Link>
+          )}
+
+          <Link href="/about-us">
+            <a className="no-underline navcolour">About Us</a>
           </Link>
-          <Link href="/faqs">
-            <a className="no-underline navcolour">FAQs</a>
+
+          <Link href="https://blog.gadiforme.com">
+            <a className="no-underline navcolour" target="_blank">
+              FAQs
+            </a>
           </Link>
-          <Link href="https://hire.morefined.com">
-            <a className="no-underline navcolour">Hire with us</a>
+          <Link href="https://partner.gadiforme.com">
+            <a className="no-underline navcolour" target="_blank">
+              Drive with us
+            </a>
           </Link>
           {user ? (
             <Button
