@@ -38,23 +38,34 @@ const Sidepanel = () => {
         ref={sidepanelRef}
       >
         <div>
-          <Link href="/request-for-mock-interview">
-            <a className="no-underline navcolour">Refer Me</a>
+          <Link href="/add-trip">
+            <a className="no-underline navcolour">Gadi`s for Your Trip</a>
           </Link>
         </div>
         <div>
-          <Link href="/pricing">
-            <a className="no-underline navcolour">Pricing</a>
+          {user && (
+            <Link href="/my-trips">
+              <a className="no-underline navcolour">My Trips</a>
+            </Link>
+          )}
+        </div>
+        <div>
+          <Link href="/about-us">
+            <a className="no-underline navcolour">About Us</a>
           </Link>
         </div>
         <div>
-          <Link href="/faqs">
-            <a className="no-underline navcolour">FAQs</a>
+          <Link href="https://blog.gadiforme.com">
+            <a className="no-underline navcolour" target="_blank">
+              FAQs
+            </a>
           </Link>
         </div>
         <div>
-          <Link href="https://hire.morefined.com">
-            <a className="no-underline navcolour">Hire with us</a>
+          <Link href="https://partner.gadiforme.com">
+            <a className="no-underline navcolour" target="_blank">
+              Drive with us
+            </a>
           </Link>
         </div>
         {user ? (

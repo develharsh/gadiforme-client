@@ -18,9 +18,9 @@
   padding: 0 10px;
 }
 .navmaindiv > a > :nth-child(1) {
-  /* color: #fff; */
+  color: #fff;
   font-weight: bold;
-  background-color: gold;
+  background-color: #3b82f6;
   padding-left: 4px;
   padding-right: 4px;
   margin-left: 2px;
