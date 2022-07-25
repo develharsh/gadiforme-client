@@ -63,9 +63,9 @@ export default function Navbar() {
               className="p-button-rounded p-button-danger"
             />
           ) : (
-            <Link href="/login">
-              <a className="no-underline navcolour">Sign in</a>
-            </Link>
+            <a className="no-underline navcolour" href="#">
+              Sign in
+            </a>
           )}
         </div>
         <p className="navhamburger" onClick={toggleSidepanel}>
