@@ -27,6 +27,11 @@ const reducers = (state, action) => {
         ...state,
         sidepanel: action.payload,
       };
+    case ACTIONS.LOGIN_MODAL:
+      return {
+        ...state,
+        loginModal: action.payload,
+      };
     default:
       return state;
   }

@@ -3,6 +3,7 @@ import Navbar from "./design/navbar";
 import Footer from "./design/footer";
 // import GlobalLoading from "./design/globalloading";
 import Sidepanel from "./design/sidepanel";
+import Login from "./auth/login";
 import Toast from "./toast/toast";
 
 // import { useContext } from "react";
@@ -27,6 +28,7 @@ function layout({ children }) {
       <Navbar />
       {/* <Information /> */}
       {/* <GlobalLoading /> */}
+      {<Login />}
       {<Sidepanel />}
       <Toast />
       {/* <Loading show={routeChanged} /> */}

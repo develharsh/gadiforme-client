@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const { dispatch, state } = useContext(DataContext);
-  const { user, sidepanel } = state;
+  const { user, sidepanel, loginModal } = state;
   const toggleSidepanel = () => {
     dispatch({ type: ACTIONS.SIDEPANEL, payload: !sidepanel });
   };
@@ -61,7 +61,13 @@ export default function Navbar() {
               Log Out
             </Button>
           ) : (
-            <a className="no-underline navcolour" href="#login">
+            <a
+              className="no-underline navcolour"
+              href="#login"
+              onClick={() =>
+                dispatch({ type: ACTIONS.LOGIN_MODAL, payload: !loginModal })
+              }
+            >
               Sign in
             </a>
           )}
