@@ -2,25 +2,19 @@
 import { useRef, useContext, useEffect } from "react";
 import { DataContext } from "../../store/globalstate";
 import { ACTIONS } from "../../store/actions";
-import { Toast } from "primereact/toast";
+import { useToast } from "@chakra-ui/react";
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQ5N2E4ZDExZWM1N2FlNTVhODFkOTIiLCJpYXQiOjE2NTkxMTAyNjUsImV4cCI6MTY1OTU0MjI2NX0.UT1X037VeeTFwH6_yiLq_LwAIt68E6ihAgrQbyMLpyc
 
 function ToastC() {
-  const map = {
-    success: "Woho",
-    error: "Oops",
-    info: "Hey",
-    warn: "Warning",
-  };
-  const toast = useRef(null);
+  const toast = useToast();
   const { state, dispatch } = useContext(DataContext);
   const { notify } = state;
   useEffect(() => {
     if (notify) {
-      toast.current.show({
-        severity: notify[0],
-        summary: map[notify[0]],
-        detail: notify[1],
-        life: 3000,
+      toast({
+        title: `${notify[1]}`,
+        status: notify[0],
+        isClosable: true,
       });
       setTimeout(() => {
         dispatch({ type: ACTIONS.NOTIFY, payload: null });
@@ -28,11 +22,7 @@ function ToastC() {
     }
   }, [dispatch, notify]);
 
-  return (
-    <>
-      <Toast ref={toast} />
-    </>
-  );
+  return <>{/* <Toast ref={toast} /> */}</>;
 }
 
 export default ToastC;

@@ -1,19 +1,16 @@
-import "primereact/resources/themes/lara-light-indigo/theme.css"; //theme
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import "primeicons/primeicons.css";
-import "primeflex/primeflex.css";
-
 import "../styles/globals.css";
 import Layout from "../components/layout";
 import { DataProvider } from "../store/globalstate";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps }) {
   return (
     <DataProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ChakraProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
     </DataProvider>
   );
 }

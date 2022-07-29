@@ -2,7 +2,7 @@ import { useContext, useRef, useEffect } from "react";
 import { DataContext } from "../../store/globalstate";
 import { ACTIONS } from "../../store/actions";
 import cookie from "js-cookie";
-import { Button } from "primereact/button";
+import { Button } from "@chakra-ui/react";
 import Link from "next/link";
 
 const Sidepanel = () => {
@@ -33,7 +33,7 @@ const Sidepanel = () => {
   return (
     <>
       <div
-        className="sidepanel shadow-5 sidepanel-close"
+        className="sidepanel sidepanel-close"
         onClick={hideSidePanel}
         ref={sidepanelRef}
       >
@@ -70,11 +70,9 @@ const Sidepanel = () => {
         </div>
         {user ? (
           <div>
-            <Button
-              label="Log Out"
-              onClick={logOutNow}
-              className="p-button-rounded p-button-danger"
-            />
+            <Button colorScheme="red" onClick={logOutNow}>
+              Log Out
+            </Button>
           </div>
         ) : (
           <div>

@@ -1,5 +1,5 @@
 .navmaindiv {
-  background-color: #fff;
+  background-color: #3b82f6;
   position: fixed;
   top: 0;
   width: 100%;
@@ -11,16 +11,17 @@
 .navmaindiv > a {
   font-family: "Merriweather", serif;
   text-decoration: none;
-  background-color: #fff;
+  /* background-color: red; */
+  color: #fff;
   font-size: 2rem;
   margin: 5px 10px 5px;
   border-radius: 15px;
   padding: 0 10px;
 }
 .navmaindiv > a > :nth-child(1) {
-  color: #fff;
+  color: #000;
   font-weight: bold;
-  background-color: #3b82f6;
+  background-color: #fff;
   padding-left: 4px;
   padding-right: 4px;
   margin-left: 2px;
@@ -28,7 +29,7 @@
   border-radius: 1px 3px 6px 12px;
 }
 .navmaindiv > a > :nth-child(2) {
-  color: #494949;
+  color: #fff;
 }
 .navmaindiv > div {
   display: none;
@@ -54,9 +55,9 @@
   display: block;
   position: absolute;
   right: 10px;
-  top: 10px;
-  background-color: #fff;
-  padding: 3px;
+  top: 15px;
+  /* background-color: red; */
+  color: #fff;
   border-radius: 3px;
 }
 /* tab */

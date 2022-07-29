@@ -6,7 +6,7 @@
   left: auto;
   background-color: #fff;
   z-index: 2;
-  /* border: 1px solid red; */
+  box-shadow: 3px 0 13px 0 rgb(114, 105, 105);
 }
 
 .sidepanel-open {
@@ -44,14 +44,15 @@
 }
 .sidepanel > div > a {
   font-family: "Open Sans", sans-serif;
-  border: 2px solid #3b82f6;
+  background-color: #3b82f6;
   border-radius: 23px;
-  color: #3b82f6;
+  color: #fff;
   padding: 0.4rem 4rem;
 }
 .sidepanel > div > a:hover {
-  background-color: #3b82f6;
-  color: #fff;
+  background-color: #fff;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
 }
 /* tab */
 @media (min-width: 40rem) {

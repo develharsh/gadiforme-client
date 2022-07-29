@@ -4,7 +4,7 @@ import { ACTIONS } from "../../store/actions";
 import cookie from "js-cookie";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
-import { Button } from "primereact/button";
+import { Button } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -57,19 +57,17 @@ export default function Navbar() {
             </a>
           </Link>
           {user ? (
-            <Button
-              label="Log Out"
-              onClick={logOutNow}
-              className="p-button-rounded p-button-danger"
-            />
+            <Button colorScheme="red" onClick={logOutNow}>
+              Log Out
+            </Button>
           ) : (
-            <a className="no-underline navcolour" href="#">
+            <a className="no-underline navcolour" href="#login">
               Sign in
             </a>
           )}
         </div>
         <p className="navhamburger" onClick={toggleSidepanel}>
-          {sidepanel ? <FaTimes size={25} /> : <AiOutlineMenu size={25} />}
+          {sidepanel ? <FaTimes size={30} /> : <AiOutlineMenu size={30} />}
         </p>
       </div>
       <div className="navheighbelow"></div>
