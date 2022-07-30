@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../store/globalstate";
-import { ACTIONS } from "../../store/actions";
+import { ACTIONS, userLogin } from "../../store/actions";
 import {
   Modal,
   ModalOverlay,
@@ -19,7 +19,6 @@ import {
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineLogin } from "react-icons/ai";
 import $ from "jquery";
-import axios from "axios";
 import cookie from "js-cookie";
 import { useRouter } from "next/router";
 
@@ -59,25 +58,18 @@ const Login = () => {
     if ($.isEmptyObject(invalidations)) setErrors({});
     else return setErrors(invalidations);
     setIsLoading(true);
-    try {
-      const response = await axios({
-        method: "POST",
-        url: `${process.env.baseUrl}/v1/user/login`,
-        data: payload,
-      });
-      setIsLoading(false);
-      const { success, token, message, user } = response.data;
-      if (success && token && message && user) {
-        cookie.set("token", token);
-        dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
-        dispatch({ type: ACTIONS.AUTH, payload: user });
-        toggleLoginModal();
-      }
-    } catch (err) {
-      setIsLoading(false);
+    const response = await userLogin(payload);
+    setIsLoading(false);
+    const { success, token, message, user } = response;
+    if (success && token && message && user) {
+      cookie.set("token", token);
+      dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
+      dispatch({ type: ACTIONS.AUTH, payload: user });
+      toggleLoginModal();
+    } else {
       dispatch({
         type: ACTIONS.NOTIFY,
-        payload: ["error", err.response.data.message],
+        payload: ["error", response.message],
       });
     }
   };

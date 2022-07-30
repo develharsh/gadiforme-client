@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../store/globalstate";
-import { ACTIONS } from "../../store/actions";
+import { ACTIONS, userRegister } from "../../store/actions";
 import {
   Modal,
   ModalOverlay,
@@ -59,25 +59,18 @@ const Register = () => {
     if ($.isEmptyObject(invalidations)) setErrors({});
     else return setErrors(invalidations);
     setIsLoading(true);
-    try {
-      const response = await axios({
-        method: "POST",
-        url: `${process.env.baseUrl}/v1/user/register`,
-        data: payload,
-      });
-      setIsLoading(false);
-      const { success, token, message, user } = response.data;
-      if (success && token && message && user) {
-        cookie.set("token", token);
-        dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
-        dispatch({ type: ACTIONS.AUTH, payload: user });
-        toggleRegisterModal();
-      }
-    } catch (err) {
-      setIsLoading(false);
+    const response = await userRegister(payload);
+    setIsLoading(false);
+    const { success, token, message, user } = response;
+    if (success && token && message && user) {
+      cookie.set("token", token);
+      dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
+      dispatch({ type: ACTIONS.AUTH, payload: user });
+      toggleRegisterModal();
+    } else {
       dispatch({
         type: ACTIONS.NOTIFY,
-        payload: ["error", err.response.data.message],
+        payload: ["error", response.message],
       });
     }
   };
