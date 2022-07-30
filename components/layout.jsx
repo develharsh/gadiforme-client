@@ -4,6 +4,7 @@ import Footer from "./design/footer";
 // import GlobalLoading from "./design/globalloading";
 import Sidepanel from "./design/sidepanel";
 import Login from "./auth/login";
+import Register from "./auth/register";
 import Toast from "./toast/toast";
 
 // import { useContext } from "react";
@@ -29,6 +30,7 @@ function layout({ children }) {
       {/* <Information /> */}
       {/* <GlobalLoading /> */}
       {<Login />}
+      {<Register />}
       {<Sidepanel />}
       <Toast />
       {/* <Loading show={routeChanged} /> */}

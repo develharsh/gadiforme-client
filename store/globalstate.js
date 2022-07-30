@@ -7,7 +7,7 @@ import { ACTIONS } from "./actions";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const initialState = {};
+  let initialState = {};
   const [state, dispatch] = useReducer(reducers, initialState);
   //   const { cart } = state;
 
@@ -40,7 +40,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     // try {
     //   let cart = cookie.get("cart");
-      // alert(cart)
+    // alert(cart)
     //   cart = JSON.parse(cart);
     //   if (cart) {
     //     dispatch({ type: "ADD_CART", payload: cart });

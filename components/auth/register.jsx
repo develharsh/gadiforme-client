@@ -15,30 +15,31 @@ import {
   Button,
   useDisclosure,
   Spinner,
+  Stack,
 } from "@chakra-ui/react";
 import { FaTimes } from "react-icons/fa";
-import { AiOutlineLogin } from "react-icons/ai";
+import { MdAppRegistration } from "react-icons/md";
 import $ from "jquery";
 import axios from "axios";
 import cookie from "js-cookie";
 import { useRouter } from "next/router";
 
-const Login = () => {
+const Register = () => {
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { dispatch, state } = useContext(DataContext);
-  const { loginModal } = state;
+  const { registerModal } = state;
   const [payload, setPayload] = useState({ phone: "", password: "" });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (loginModal) onOpen();
+    if (registerModal) onOpen();
     else onClose();
-  }, [loginModal]);
+  }, [registerModal]);
 
-  const toggleLoginModal = () => {
-    dispatch({ type: ACTIONS.LOGIN_MODAL, payload: !loginModal });
+  const toggleRegisterModal = () => {
+    dispatch({ type: ACTIONS.REGISTER_MODAL, payload: !registerModal });
     router.push(window.location.href.replace(/#.*/, ""));
   };
 
@@ -58,7 +59,7 @@ const Login = () => {
     try {
       const response = await axios({
         method: "POST",
-        url: `${process.env.baseUrl}/v1/user/login`,
+        url: `${process.env.baseUrl}/v1/user/register`,
         data: payload,
       });
       setIsLoading(false);
@@ -78,17 +79,17 @@ const Login = () => {
     }
   };
 
-  const switchToRegister = () => {
-    dispatch({ type: ACTIONS.LOGIN_MODAL, payload: false });
-    dispatch({ type: ACTIONS.REGISTER_MODAL, payload: true });
-    router.push(window.location.href.replace(/#.*/, "#register"));
+  const switchToLogin = () => {
+    dispatch({ type: ACTIONS.REGISTER_MODAL, payload: false });
+    dispatch({ type: ACTIONS.LOGIN_MODAL, payload: true });
+    router.push(window.location.href.replace(/#.*/, "#login"));
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={toggleLoginModal}>
+    <Modal isOpen={isOpen} onClose={toggleRegisterModal}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Log In</ModalHeader>
+        <ModalHeader>Register - New Account</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
           <FormControl>
@@ -119,25 +120,30 @@ const Login = () => {
         <ModalFooter display="flex" justifyContent="space-between" gap={1}>
           {isLoading && <Spinner />}
           <Button
-            bg="#ab47bc"
+            bg="tomato"
             color="#fff"
-            onClick={switchToRegister}
+            onClick={switchToLogin}
             _hover={{
-              bg: "#ab47bc",
               color: "#fff",
+              background: "tomato",
             }}
           >
-            New User?
+            Already a User?
           </Button>
           <Button
-            colorScheme="blue"
-            leftIcon={<AiOutlineLogin />}
+            bg="darkblue"
+            color="#fff"
+            leftIcon={<MdAppRegistration />}
             onClick={handleSubmit}
+            _hover={{
+              color: "#fff",
+              background: "darkblue",
+            }}
           >
-            Log In
+            Register
           </Button>
           <Button
-            onClick={toggleLoginModal}
+            onClick={toggleRegisterModal}
             leftIcon={<FaTimes />}
             colorScheme="red"
           >
@@ -149,4 +155,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

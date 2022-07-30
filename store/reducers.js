@@ -27,6 +27,11 @@ const reducers = (state, action) => {
         ...state,
         loginModal: action.payload,
       };
+    case ACTIONS.REGISTER_MODAL:
+      return {
+        ...state,
+        registerModal: action.payload,
+      };
     default:
       return state;
   }

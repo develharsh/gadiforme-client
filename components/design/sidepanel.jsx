@@ -4,6 +4,7 @@ import { ACTIONS } from "../../store/actions";
 import cookie from "js-cookie";
 import { Button } from "@chakra-ui/react";
 import Link from "next/link";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const Sidepanel = () => {
   const sidepanelRef = useRef(null);
@@ -70,14 +71,25 @@ const Sidepanel = () => {
         </div>
         {user ? (
           <div>
-            <Button colorScheme="red" onClick={logOutNow}>
+            <Button
+              colorScheme="red"
+              onClick={logOutNow}
+              leftIcon={<AiOutlineLogout />}
+            >
               Log Out
             </Button>
           </div>
         ) : (
           <div>
-            <Link href="/login">
-              <a className="no-underline navcolour">Log in</a>
+            <Link href="#login">
+              <a
+                className="no-underline navcolour"
+                onClick={() =>
+                  dispatch({ type: ACTIONS.LOGIN_MODAL, payload: true })
+                }
+              >
+                Log in
+              </a>
             </Link>
           </div>
         )}
