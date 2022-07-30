@@ -1,0 +1,13 @@
+.new-trip-main-div {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+/* tab */
+@media (min-width: 40rem) {
+}
+
+/*lap */
+@media (min-width: 80rem) {
+}

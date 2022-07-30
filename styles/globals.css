@@ -4,6 +4,7 @@
 }
 
 @import url("./Home.module.css");
+@import url("./new-trip.css");
 
 /*Common Begin*/
 .text-bold {
