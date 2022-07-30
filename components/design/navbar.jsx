@@ -44,7 +44,7 @@ export default function Navbar() {
         </Link>
         <div>
           <Link href="/add-trip">
-            <a>Gadi`s for Your Trip</a>
+            <a>Gadi's for Your Trip</a>
           </Link>
 
           {user && (

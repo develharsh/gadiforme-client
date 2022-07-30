@@ -18,6 +18,17 @@
 }
 /*Common End*/
 
+#nprogress {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  top: 0;
+}
+#nprogress .bar {
+  background: #fff;
+  height: 5px;
+}
+
 /*Navbar CSS Begin*/
 .p-menuitem-text,
 .p-menuitem-icon,

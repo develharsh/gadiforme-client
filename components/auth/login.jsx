@@ -28,7 +28,11 @@ const Login = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { dispatch, state } = useContext(DataContext);
   const { loginModal } = state;
-  const [payload, setPayload] = useState({ phone: "", password: "" });
+  const [payload, setPayload] = useState({
+    phone: "",
+    password: "",
+    role: "Client",
+  });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 

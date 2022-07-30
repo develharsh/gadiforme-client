@@ -15,7 +15,6 @@ import {
   Button,
   useDisclosure,
   Spinner,
-  Stack,
 } from "@chakra-ui/react";
 import { FaTimes } from "react-icons/fa";
 import { MdAppRegistration } from "react-icons/md";
@@ -29,7 +28,11 @@ const Register = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { dispatch, state } = useContext(DataContext);
   const { registerModal } = state;
-  const [payload, setPayload] = useState({ phone: "", password: "" });
+  const [payload, setPayload] = useState({
+    phone: "",
+    password: "",
+    role: "Client",
+  });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -68,7 +71,7 @@ const Register = () => {
         cookie.set("token", token);
         dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
         dispatch({ type: ACTIONS.AUTH, payload: user });
-        toggleLoginModal();
+        toggleRegisterModal();
       }
     } catch (err) {
       setIsLoading(false);

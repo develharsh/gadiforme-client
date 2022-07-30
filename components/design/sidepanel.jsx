@@ -40,7 +40,7 @@ const Sidepanel = () => {
       >
         <div>
           <Link href="/add-trip">
-            <a className="no-underline navcolour">Gadi`s for Your Trip</a>
+            <a className="no-underline navcolour">Gadi's for Your Trip</a>
           </Link>
         </div>
         <div>

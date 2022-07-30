@@ -12,14 +12,17 @@ import Toast from "./toast/toast";
 import Router from "next/router";
 // import Information from "./design/information";
 // import { ACTIONS } from "../store/actions";
+import NProgress from "nprogress";
 
 function layout({ children }) {
   // const { dispatch } = useContext(DataContext);
   Router.events.on("routeChangeStart", (url) => {
     // dispatch({ type: ACTIONS.GLOBAL_LOADING, payload: true });
+    NProgress.start();
   });
   Router.events.on("routeChangeComplete", (url) => {
     // dispatch({ type: ACTIONS.GLOBAL_LOADING, payload: false });
+    NProgress.done();
   });
   return (
     <>
