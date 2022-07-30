@@ -52,6 +52,11 @@ export default function Navbar() {
               <a>My Trips</a>
             </Link>
           )}
+          {user && (
+            <Link href="/profile">
+              <a>Profile</a>
+            </Link>
+          )}
 
           <Link href="/about-us">
             <a>About Us</a>
