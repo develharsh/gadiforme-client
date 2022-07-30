@@ -33,28 +33,24 @@ export default function Navbar() {
         </Link>
         <div>
           <Link href="/add-trip">
-            <a className="no-underline navcolour">Gadi`s for Your Trip</a>
+            <a>Gadi`s for Your Trip</a>
           </Link>
 
           {user && (
             <Link href="/my-trips">
-              <a className="no-underline navcolour">My Trips</a>
+              <a>My Trips</a>
             </Link>
           )}
 
           <Link href="/about-us">
-            <a className="no-underline navcolour">About Us</a>
+            <a>About Us</a>
           </Link>
 
           <Link href="https://blog.gadiforme.com">
-            <a className="no-underline navcolour" target="_blank">
-              FAQs
-            </a>
+            <a target="_blank">FAQs</a>
           </Link>
           <Link href="https://partner.gadiforme.com">
-            <a className="no-underline navcolour" target="_blank">
-              Drive with us
-            </a>
+            <a target="_blank">Drive with us</a>
           </Link>
           {user ? (
             <Button colorScheme="red" onClick={logOutNow}>
@@ -62,13 +58,13 @@ export default function Navbar() {
             </Button>
           ) : (
             <a
-              className="no-underline navcolour"
+              className="navLoginBtn"
               href="#login"
               onClick={() =>
                 dispatch({ type: ACTIONS.LOGIN_MODAL, payload: !loginModal })
               }
             >
-              Sign in
+              Log in
             </a>
           )}
         </div>

@@ -17,11 +17,6 @@ const reducers = (state, action) => {
     //     ...state,
     //     globalLoading: action.payload,
     //   };
-    case ACTIONS.LOADING:
-      return {
-        ...state,
-        loading: action.payload,
-      };
     case ACTIONS.SIDEPANEL:
       return {
         ...state,

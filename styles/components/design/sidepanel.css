@@ -43,11 +43,12 @@
   /* background-color: red; */
 }
 .sidepanel > div > a {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #3b82f6;
   border-radius: 23px;
   color: #fff;
   padding: 0.4rem 4rem;
+  font-weight: bold;
 }
 .sidepanel > div > a:hover {
   background-color: #fff;

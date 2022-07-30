@@ -77,7 +77,7 @@ const Sidepanel = () => {
         ) : (
           <div>
             <Link href="/login">
-              <a className="no-underline navcolour">Sign in</a>
+              <a className="no-underline navcolour">Log in</a>
             </Link>
           </div>
         )}
