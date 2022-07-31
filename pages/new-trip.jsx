@@ -16,7 +16,6 @@ import {
   Spinner,
   Tooltip,
   Text,
-  IconButton,
 } from "@chakra-ui/react";
 import { State, City } from "country-state-city";
 import $ from "jquery";
@@ -59,7 +58,7 @@ const Newtrip = () => {
   };
   const handleDeepChange = (value, Key, Type) => {
     payload[Type][Key] = value;
-    setPayload(payload);
+    setPayload({ ...payload });
     delete errors[`${Type} ${Key}`];
     setErrors(errors);
   };
@@ -86,11 +85,12 @@ const Newtrip = () => {
   };
 
   useEffect(() => {
-    setStates(
-      State.getStatesOfCountry("IN").map((each) => {
-        return { label: each.name, value: each.isoCode };
-      })
-    );
+    if (states?.length == 0)
+      setStates(
+        State.getStatesOfCountry("IN").map((each) => {
+          return { label: each.name, value: each.isoCode };
+        })
+      );
   }, [states]);
 
   const handleSubmit = async () => {
@@ -103,14 +103,14 @@ const Newtrip = () => {
     setIsLoading(false);
     const { success, message, trip } = response;
     if (success && message && trip) {
-      dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
       Router.push("/");
+      dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
       setTimeout(() => {
         window.open(
           `https://wa.me/+918077015752?text=Hey%20GadiForMe,%0APlease%20Review%20My%20Trip:%20${trip}`,
           "_blank"
         );
-      }, 2000);
+      }, 3000);
     } else {
       dispatch({
         type: ACTIONS.NOTIFY,
@@ -264,9 +264,9 @@ const Newtrip = () => {
           <FormErrorMessage>{errors["To Place"]}</FormErrorMessage>
         </FormControl>
         <FormControl w="20rem">
-          <Tooltip label="Will you return with us also?" hasArrow>
+          <Tooltip label="Will you return with us for sure?" hasArrow>
             <FormLabel display="flex" gap="1rem">
-              <span className="red">*</span> Is Round Trip?
+              Is Round Trip?
               <AiFillInfoCircle size="1.3rem" />
             </FormLabel>
           </Tooltip>

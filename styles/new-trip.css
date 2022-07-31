@@ -3,6 +3,7 @@
   justify-content: space-evenly;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 10vh;
 }
 /* tab */
 @media (min-width: 40rem) {
