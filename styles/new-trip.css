@@ -1,7 +1,7 @@
 .new-trip-main-div {
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 /* tab */
