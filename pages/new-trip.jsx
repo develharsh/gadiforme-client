@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../store/globalstate";
 import { ACTIONS, newTrip } from "../store/actions";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import {
   Input,
   FormControl,
@@ -44,6 +44,7 @@ const ObjOfPayload = {
 };
 
 const Newtrip = () => {
+  const router = useRouter();
   const { dispatch } = useContext(DataContext);
   const [payload, setPayload] = useState(ObjOfPayload);
   const [states, setStates] = useState([]);
@@ -97,13 +98,20 @@ const Newtrip = () => {
     let invalidations = {};
     invalidations = validatePayload(invalidations, payload);
     if ($.isEmptyObject(invalidations)) setErrors({});
-    else return setErrors(invalidations);
+    else {
+      setErrors(invalidations);
+      dispatch({
+        type: ACTIONS.NOTIFY,
+        payload: ["warning", "Please Resolve Above Errors"],
+      });
+      return;
+    }
     setIsLoading(true);
     const response = await newTrip(payload);
     setIsLoading(false);
     const { success, message, trip } = response;
     if (success && message && trip) {
-      Router.push("/");
+      router.push("/");
       dispatch({ type: ACTIONS.NOTIFY, payload: ["success", message] });
       setTimeout(() => {
         window.open(

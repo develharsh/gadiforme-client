@@ -42,3 +42,15 @@ export const newTrip = async (payload) => {
     return { success: false, message: err.response.data.message };
   }
 };
+
+export const viewTrip = async (_id) => {
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `${process.env.baseUrl}/v1/trip/${_id}`,
+    });
+    return response.data;
+  } catch (err) {
+    return { success: false, message: err.response.data.message };
+  }
+};
