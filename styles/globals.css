@@ -3,11 +3,13 @@
   margin: 0;
 }
 
+
 @import url("./Home.module.css");
 @import url("./new-trip.css");
+@import url("./trip/_id.css");
 
 /*Common Begin*/
-.text-bold {
+.fwb {
   font-weight: bold;
 }
 .navcolour {

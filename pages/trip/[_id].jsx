@@ -30,49 +30,171 @@ const View = () => {
       <Text fontSize="2xl" textAlign={"center"} my="0.5rem">
         Thanks for Choosing Us:)
       </Text>
-      {trip ? <DetailsComp data={trip} /> : <Spinner size="lg" />}
+      <div className="trip_id_first_tile">
+        <img
+          src="/assets/gadiforme-com-trip-background.jpg"
+          alt="gadiforme-com-trip-background.jpg"
+        />
+      </div>
+      {trip ? (
+        <DetailsComp data={trip} />
+      ) : (
+        <div className="trip_id_spinner">
+          <Spinner size="lg" color="#ED64A6" />
+        </div>
+      )}
     </>
   );
 };
 
 const DetailsComp = ({ data }) => {
   return (
-    <div>
-      <img src={data.Client.Id.Image} alt="Client Image" />
-      <p>Name: {data.Client.Name}</p>
-      <p>
-        Phone: {data.Client.PhoneExt} {data.Client.Phone}
-      </p>
-
-      <p>
-        Pickup: {data.From.Place} __ {data.From.City}
-        {" __ "}
-        {State.getStateByCodeAndCountry(data.From.State, "IN").name}
-      </p>
-      <p>
-        Dropoff: {data.To.Place} __ {data.To.City}
-        {" __ "}
-        {State.getStateByCodeAndCountry(data.To.State, "IN").name}
-      </p>
-
-      <p>Round Trip? : {data.IsRoundTrip ? "Yes" : "No"}</p>
-      <p>
-        Pickup Date &amp; Time:{" "}
-        {moment(data.When).format("dddd DD MMM YYYY, hh:mm A")}
-      </p>
-      {data.IsRoundTrip && (
+    <div className="trip_id_details_div">
+      <div>
+        <img
+          src={data.Client.Id.Image}
+          alt="Client Image"
+          className="trip_id_client_id"
+        />
+      </div>
+      <div>
         <p>
-          Return Date &amp; Time:{" "}
-          {moment(data.ReturnTime).format("dddd DD MMM YYYY, hh:mm A")}
+          <span>Client&apos;s Name:</span>
+          <br></br>
+          <span>{data.Client.Name}</span>
         </p>
-      )}
-      <p>Vehicle: {data.Vehicle.Title}</p>
+      </div>
+      <div>
+        <p>
+          <span>Client&apos;s Phone:</span>
+          <br></br>
+          <span>
+            {data.Client.PhoneExt} {data.Client.Phone}
+          </span>
+        </p>
+      </div>
 
-      <img src={data.Partner.Id.Image} alt="Partner Image" />
-      <p>Name: {data.Partner.Name}</p>
-      <p>
-        Phone: {data.Partner.PhoneExt} {data.Partner.Phone}
-      </p>
+      <div>
+        <p>
+          <span>Pickup:</span>
+          <br></br>
+          <span>
+            {data.From.Place} __ {data.From.City}
+            {" __ "}
+            {State.getStateByCodeAndCountry(data.From.State, "IN").name}
+          </span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Dropoff:</span>
+          <br></br>
+          <span>
+            {data.To.Place} __ {data.To.City}
+            {" __ "}
+            {State.getStateByCodeAndCountry(data.To.State, "IN").name}
+          </span>
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <span>Round Trip?:</span>
+          <br></br>
+          <span>{data.IsRoundTrip ? "Yes" : "No"}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Pickup Date &amp; Time:</span>
+          <br></br>
+          <span>{moment(data.When).format("dddd DD MMM YYYY, hh:mm A")}</span>
+        </p>
+      </div>
+      {data.IsRoundTrip && (
+        <div>
+          <p>
+            <span>Return Date &amp; Time:</span>
+            <br></br>
+            <span>
+              {moment(data.ReturnTime).format("dddd DD MMM YYYY, hh:mm A")}
+            </span>
+          </p>
+        </div>
+      )}
+      <div>
+        <p>
+          <span>Vehicle:</span>
+          <br></br>
+          <span>{data.Vehicle.Title}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Registration No.:</span>
+          <br></br>
+          <span>{data.Vehicle.RegistrationNo}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Total Cost:</span>
+          <br></br>
+          <span>{data.TotalCost}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Advance Paid:</span>
+          <br></br>
+          <span>{data.AdvancePaid}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>No. of Person:</span>
+          <br></br>
+          <span>{data.NoOfPerson}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Purpose:</span>
+          <br></br>
+          <span>{data.Purpose}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Message:</span>
+          <br></br>
+          <span>{data.AnyMessage}</span>
+        </p>
+      </div>
+
+      <div>
+        <img
+          src={data.Partner.Id.Image}
+          alt="Partner Image"
+          className="trip_id_partner_id"
+        />
+      </div>
+      <div>
+        <p>
+          <span>Trip Partner&apos;s Name:</span>
+          <br></br>
+          <span>{data.Partner.Name}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Trip Partner&apos;s Phone:</span>
+          <br></br>
+          <span>
+            {data.Partner.PhoneExt} {data.Partner.Phone}
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
