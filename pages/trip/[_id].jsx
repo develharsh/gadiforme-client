@@ -23,7 +23,7 @@ const View = () => {
     }
   }, [_id, trip]);
   return (
-    <>
+    <div style={{ marginBottom: "10vh" }}>
       <Text fontSize="5xl" textAlign={"center"} mt="2rem" color="#ED64A6">
         Trip Details- GadiForMe Inc.
       </Text>
@@ -43,7 +43,7 @@ const View = () => {
           <Spinner size="lg" color="#ED64A6" />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
@@ -140,14 +140,14 @@ const DetailsComp = ({ data }) => {
         <p>
           <span>Total Cost:</span>
           <br></br>
-          <span>{data.TotalCost}</span>
+          <span>₹ {data.TotalCost}</span>
         </p>
       </div>
       <div>
         <p>
           <span>Advance Paid:</span>
           <br></br>
-          <span>{data.AdvancePaid}</span>
+          <span>₹ {data.AdvancePaid}</span>
         </p>
       </div>
       <div>
