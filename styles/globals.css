@@ -3,10 +3,13 @@
   margin: 0;
 }
 
-
+@import url("https://fonts.googleapis.com/css2?family=Square+Peg&display=swap");
 @import url("./Home.module.css");
 @import url("./new-trip.css");
 @import url("./trip/_id.css");
+@import url("./about-us.css");
+@import url("./terms-and-conditions.css");
+@import url("./privacy-policy.css");
 
 /*Common Begin*/
 .fwb {
@@ -27,7 +30,7 @@
   top: 0;
 }
 #nprogress .bar {
-  background: #ED64A6;
+  background: #ed64a6;
   height: 5px;
 }
 
