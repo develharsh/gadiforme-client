@@ -4,7 +4,7 @@ const Aboutus = () => {
   return (
     <div className="aboutus">
       Welcome to GadiForMe Inc., your number one source for Trip Vehicles. We're
-      dedicated to giving you the very best of [product], with a focus on
+      dedicated to giving you the very best of the service, with a focus on
       convenience, safety, and great experience that too with affordability.
       Founded in 2021 by Vishesh Goyal, GadiForMe Inc. has come a long way from
       its beginnings in One City to 42 Cities across India. When Vishesh Goyal
