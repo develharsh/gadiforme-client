@@ -60,7 +60,7 @@ export default function LargeWithLogoLeft() {
             <Link href={"https://partner.gadiforme.com"} target="_blank">
               Drive With Us
             </Link>
-            <Link href={"/new-trip"}>Gadi's for Your Trip</Link>
+            <Link href={"/new-trip"}>Gadis for Your Trip</Link>
             <Link href={"/new-trip"}>Private Cars</Link>
             <Link href={"/new-trip"}>Luxury Cars</Link>
             <Link href={"/new-trip"}>Buses</Link>
