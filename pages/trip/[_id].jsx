@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { Text, Spinner } from "@chakra-ui/react";
 import { State } from "country-state-city";
 import moment from "moment";
+import { PhoneIcon } from "@chakra-ui/icons";
 
 const View = () => {
   const router = useRouter();
@@ -68,9 +69,9 @@ const DetailsComp = ({ data }) => {
         <p>
           <span>Client&apos;s Phone:</span>
           <br></br>
-          <span>
-            {data.Client.PhoneExt} {data.Client.Phone}
-          </span>
+          <a href={`tel:${data.Client.PhoneExt}${data.Client.Phone}`}>
+            <PhoneIcon /> {data.Client.PhoneExt} {data.Client.Phone}
+          </a>
         </p>
       </div>
 
@@ -190,9 +191,9 @@ const DetailsComp = ({ data }) => {
         <p>
           <span>Trip Partner&apos;s Phone:</span>
           <br></br>
-          <span>
-            {data.Partner.PhoneExt} {data.Partner.Phone}
-          </span>
+          <a href={`tel:${data.Partner.PhoneExt}${data.Partner.Phone}`}>
+            <PhoneIcon /> {data.Partner.PhoneExt} {data.Partner.Phone}
+          </a>
         </p>
       </div>
     </div>

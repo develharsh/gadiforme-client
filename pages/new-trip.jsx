@@ -19,8 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { State, City } from "country-state-city";
 import $ from "jquery";
-import { IoMdSend } from "react-icons/io";
-import { AiFillInfoCircle } from "react-icons/ai";
+import { ArrowForwardIcon, InfoIcon } from "@chakra-ui/icons";
 
 const ObjOfPayload = {
   Name: "",
@@ -150,7 +149,7 @@ const Newtrip = () => {
           <Tooltip label="WhatsApp No. Preferred for Sending Details" hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> Your WhatsApp No.
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <InputGroup>
@@ -169,7 +168,7 @@ const Newtrip = () => {
           <Tooltip label="State, You will leave from" hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> From State
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Select
@@ -188,7 +187,7 @@ const Newtrip = () => {
           <Tooltip label="City, You will leave from" hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> From City
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Select
@@ -207,7 +206,7 @@ const Newtrip = () => {
           <Tooltip label="House No., Building, Sector/Colony" hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> From Place(Pickup Location)
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Input
@@ -222,7 +221,7 @@ const Newtrip = () => {
           <Tooltip label="State, your destination is there" hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> To State
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Select
@@ -241,7 +240,7 @@ const Newtrip = () => {
           <Tooltip label="City, your destination is there" hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> To City
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Select
@@ -260,7 +259,7 @@ const Newtrip = () => {
           <Tooltip label="Building/House/Station..." hasArrow>
             <FormLabel display="flex" gap="1rem">
               <span className="red">*</span> To Place(Destination Location)
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Input
@@ -275,7 +274,7 @@ const Newtrip = () => {
           <Tooltip label="Will you return with us for sure?" hasArrow>
             <FormLabel display="flex" gap="1rem">
               Is Round Trip?
-              <AiFillInfoCircle size="1.3rem" />
+              <InfoIcon />
             </FormLabel>
           </Tooltip>
           <Checkbox
@@ -307,7 +306,7 @@ const Newtrip = () => {
             <Tooltip label="When Driver Can start returning" hasArrow>
               <FormLabel display="flex" gap="1rem">
                 <span className="red">*</span> When to Return
-                <AiFillInfoCircle size="1.3rem" />
+                <InfoIcon />
               </FormLabel>
             </Tooltip>
             <Input
@@ -361,7 +360,7 @@ const Newtrip = () => {
           <Button
             colorScheme="purple"
             onClick={handleSubmit}
-            leftIcon={<IoMdSend />}
+            leftIcon={<ArrowForwardIcon />}
           >
             Submit
           </Button>
