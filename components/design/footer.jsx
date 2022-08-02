@@ -57,27 +57,29 @@ export default function LargeWithLogoLeft() {
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Services</ListHeader>
-            <Link href={"#"}>Drive With Us</Link>
-            <Link href={"#"}>Gadi's for Your Trip</Link>
-            <Link href={"#"}>Private Cars</Link>
-            <Link href={"#"}>Luxury Cars</Link>
-            <Link href={"#"}>Buses</Link>
+            <Link href={"https://partner.gadiforme.com"} target="_blank">
+              Drive With Us
+            </Link>
+            <Link href={"/new-trip"}>Gadi's for Your Trip</Link>
+            <Link href={"/new-trip"}>Private Cars</Link>
+            <Link href={"/new-trip"}>Luxury Cars</Link>
+            <Link href={"/new-trip"}>Buses</Link>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Company</ListHeader>
-            <Link href={"#"}>About Us</Link>
-            <Link href={"#"}>FAQs</Link>
-            <Link href={"#"}>Careers</Link>
-            <Link href={"#"}>Our Mission</Link>
-            <Link href={"#"}>Contact</Link>
+            <Link href={"/about-us"}>About Us</Link>
+            <Link href={"/frequently-asked-questions-faqs"}>FAQs</Link>
+            <Link href={"/careers"}>Careers</Link>
+            <Link href={"/about-us"}>Our Mission</Link>
+            <Link href={"/about-us"}>Contact</Link>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Support</ListHeader>
-            <Link href={"#"}>Help Center</Link>
-            <Link href={"#"}>Terms &amp; Conditions</Link>
-            <Link href={"#"}>Legal</Link>
-            <Link href={"#"}>Privacy Policy</Link>
-            <Link href={"#"}>Emergency</Link>
+            <Link href={"/about-us"}>Help Center</Link>
+            <Link href={"/terms-and-conditions"}>Terms &amp; Conditions</Link>
+            <Link href={"/privacy-policy"}>Legal</Link>
+            <Link href={"/privacy-policy"}>Privacy Policy</Link>
+            <Link href={"/about-us"}>Emergency</Link>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Follow Us</ListHeader>
