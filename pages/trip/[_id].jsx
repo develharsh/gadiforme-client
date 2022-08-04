@@ -6,6 +6,7 @@ import { Text, Spinner } from "@chakra-ui/react";
 import { State } from "country-state-city";
 import moment from "moment";
 import { PhoneIcon } from "@chakra-ui/icons";
+import Head from "next/head";
 
 const View = () => {
   const router = useRouter();
@@ -24,27 +25,32 @@ const View = () => {
     }
   }, [_id, trip]);
   return (
-    <div style={{ marginBottom: "10vh" }}>
-      <Text fontSize="5xl" textAlign={"center"} mt="2rem" color="#ED64A6">
-        Trip Details- GadiForMe Inc.
-      </Text>
-      <Text fontSize="2xl" textAlign={"center"} my="0.5rem">
-        Thanks for Choosing Us:)
-      </Text>
-      <div className="trip_id_first_tile">
-        <img
-          src="/assets/gadiforme-com-trip-background.jpg"
-          alt="gadiforme-com-trip-background.jpg"
-        />
-      </div>
-      {trip ? (
-        <DetailsComp data={trip} />
-      ) : (
-        <div className="trip_id_spinner">
-          <Spinner size="lg" color="#ED64A6" />
+    <>
+      <Head>
+        <title>My Trip Details - www.gadiforme.com</title>
+      </Head>
+      <div style={{ marginBottom: "10vh" }}>
+        <Text fontSize="5xl" textAlign={"center"} mt="2rem" color="#ED64A6">
+          Trip Details- GadiForMe Inc.
+        </Text>
+        <Text fontSize="2xl" textAlign={"center"} my="0.5rem">
+          Thanks for Choosing Us:)
+        </Text>
+        <div className="trip_id_first_tile">
+          <img
+            src="/assets/gadiforme-com-trip-background.jpg"
+            alt="gadiforme-com-trip-background.jpg"
+          />
         </div>
-      )}
-    </div>
+        {trip ? (
+          <DetailsComp data={trip} />
+        ) : (
+          <div className="trip_id_spinner">
+            <Spinner size="lg" color="#ED64A6" />
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

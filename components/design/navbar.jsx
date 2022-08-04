@@ -62,10 +62,10 @@ export default function WithSubnavigation() {
             <Text
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontFamily={"heading"}
-              color={useColorModeValue("gray.800", "white")}
+              color={"purple.500"}
             >
               <NextLink href="/">
-                <a>GadiForMe</a>
+                <a className="nav-title">GadiForMe</a>
               </NextLink>
             </Text>
 
@@ -94,10 +94,10 @@ export default function WithSubnavigation() {
               fontSize={"sm"}
               fontWeight={600}
               color={"white"}
-              bg={"pink.400"}
+              bg={"purple.500"}
               href={"#"}
               _hover={{
-                bg: "pink.300",
+                bg: "purple.700",
               }}
             >
               Sign Up
@@ -135,6 +135,7 @@ const DesktopNav = () => {
                   textDecoration: "none",
                   color: linkHoverColor,
                 }}
+                target={navItem.target}
               >
                 {navItem.label}
               </Link>
@@ -171,13 +172,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      _hover={{ bg: useColorModeValue("purple.50", "gray.900") }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
+            _groupHover={{ color: "purple.400" }}
             fontWeight={500}
           >
             {label}
@@ -193,7 +194,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"purple.400"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -272,38 +273,86 @@ const NAV_ITEMS = [
     label: "Want a Car",
     children: [
       {
-        label: "Get a List of Cars",
+        label: "Find a Cab",
         subLabel: "By just telling about Your Trip",
         href: "/new-trip",
+        target: "_self",
       },
       {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
+        label: "Find a Private Car",
+        subLabel: "Non-Commercial & Privately Owned",
+        href: "/new-trip?message=Private Car",
+        target: "_self",
+      },
+      {
+        label: "Find a Luxury Car",
+        subLabel: "Mercedes, Jaguar, Audi, BMW Only",
+        href: "/new-trip?message=Luxury Car",
+        target: "_self",
+      },
+      {
+        label: "Find a Bus",
+        subLabel: "Explore our exclusive buses",
+        href: "/new-trip?message=Bus",
+        target: "_self",
       },
     ],
   },
   {
-    label: "Find Work",
+    label: "Company",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
+        label: "About Us",
+        subLabel: "Who we are?",
+        href: "/about-us",
+        target: "_self",
       },
       {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
+        label: "FAQs",
+        subLabel: "Frequently Asked Questions",
+        href: "/frequently-asked-questions-faqs",
+        target: "_self",
+      },
+      {
+        label: "Careers",
+        subLabel: "We love to have talented people",
+        href: "/careers",
+        target: "_self",
+      },
+      {
+        label: "Our Mission",
+        subLabel: "The Secret of Energy & Goal",
+        href: "/about-us",
+        target: "_self",
       },
     ],
   },
   {
-    label: "Learn Design",
-    href: "#",
+    label: "Support",
+    children: [
+      {
+        label: "Help Center",
+        subLabel: "We ready to hear from you",
+        href: "/about-us",
+        target: "_self",
+      },
+      {
+        label: "Terms & Conditions",
+        subLabel: "We believe in transparency",
+        href: "/terms-and-conditions",
+        target: "_self",
+      },
+      {
+        label: "Privacy Policy",
+        subLabel: "We strictly maintain privacy",
+        href: "/privacy-policy",
+        target: "_self",
+      },
+    ],
   },
   {
-    label: "Hire Designers",
-    href: "#",
+    label: "Drive with us",
+    href: "https://partner.gadiforme.com",
+    target: "_blank",
   },
 ];

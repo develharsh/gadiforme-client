@@ -1,3 +1,4 @@
+import Head from "next/head";
 import {
   Flex,
   Container,
@@ -31,6 +32,11 @@ export default function Index() {
   };
   return (
     <>
+      <Head>
+        <title>
+          India&apos;s Leading Cab &amp; Taxi Provider - www.gadiforme.com
+        </title>
+      </Head>
       <TheFirstContainer handleMyTrip={handleMyTrip} />
       <TheSecondContainer />
       <TheThirdContainer />
@@ -55,7 +61,7 @@ const TheFirstContainer = ({ handleMyTrip }) => {
           lineHeight={"110%"}
         >
           Trip made{" "}
-          <Text as={"span"} color={"pink.400"}>
+          <Text as={"span"} color={"purple.500"}>
             Convenient, Safe &amp; Affordable
           </Text>
         </Heading>
@@ -69,9 +75,9 @@ const TheFirstContainer = ({ handleMyTrip }) => {
               <Button
                 rounded={"full"}
                 px={6}
-                colorScheme={"orange"}
-                bg={"pink.400"}
-                _hover={{ bg: "pink.500" }}
+                colorScheme={"purple"}
+                bg={"purple.500"}
+                _hover={{ bg: "purple.700" }}
               >
                 I want a car
               </Button>
@@ -229,7 +235,7 @@ const TheThirdContainer = () => {
           mx={"auto"}
         >
           {testimonials.map((cardInfo, index) => (
-            <TestimonialCard {...cardInfo} index={index} />
+            <TestimonialCard {...cardInfo} index={index} key={index} />
           ))}
         </SimpleGrid>
         <Box>
@@ -272,9 +278,8 @@ const TheFifthContainer = () => {
         className="home-iframe"
         src="https://www.youtube.com/embed/xpzb8_fWW1Q"
         title="GadiForMe | Know Cost of Your Trip from all Cab Owners of Your City for FREE"
-        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
     </Flex>
   );
@@ -426,9 +431,7 @@ function StatsCard(props) {
       borderColor={useColorModeValue("gray.800", "gray.500")}
       rounded={"lg"}
     >
-      <StatLabel fontWeight={"medium"} isTruncated>
-        {title}
-      </StatLabel>
+      <StatLabel fontWeight={"medium"}>{title}</StatLabel>
       <StatNumber fontSize={"2xl"} fontWeight={"medium"}>
         {stat}
       </StatNumber>

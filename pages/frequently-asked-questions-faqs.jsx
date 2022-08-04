@@ -1,4 +1,4 @@
-// import React from "react";
+import Head from "next/head";
 
 import {
   Text,
@@ -12,6 +12,9 @@ import {
 const Faqs = () => {
   return (
     <>
+      <Head>
+        <title>Frequently Asked Questions - www.gadiforme.com</title>
+      </Head>
       <Text fontSize="5xl" textAlign={"center"} my="2rem" color="#000">
         Frequently Asked Questions - FAQs
       </Text>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../store/globalstate";
 import { ACTIONS, newTrip } from "../store/actions";
@@ -91,7 +92,9 @@ const Newtrip = () => {
           return { label: each.name, value: each.isoCode };
         })
       );
-  }, [states]);
+    if (router?.query?.message)
+      setPayload({ ...payload, AnyMessage: `Only ${router?.query?.message}` });
+  }, [states, router]);
 
   const handleSubmit = async () => {
     let invalidations = {};
@@ -128,6 +131,9 @@ const Newtrip = () => {
 
   return (
     <>
+      <Head>
+        <title>New Trip - www.gadiforme.com</title>
+      </Head>
       <Text fontSize="5xl" textAlign={"center"} my="2rem" color="#ED64A6">
         Add Trip Details to Get List of Available Cabs
       </Text>
