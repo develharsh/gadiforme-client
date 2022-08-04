@@ -2,6 +2,12 @@
   font-family: "Noto Sans JP", sans-serif;
   font-weight: bold;
 }
+
+.home-iframe {
+  width: 95vw;
+  height: 15rem;
+  margin: 2rem 0;
+}
 /* tab */
 @media (min-width: 40rem) {
   .home_tile_1 {
@@ -9,6 +15,11 @@
   }
   .home_text_1 {
     font-size: 1.5rem;
+  }
+  .home-iframe {
+    width: 75vw;
+    height: 30rem;
+    margin: 2rem 0;
   }
 }
 
@@ -19,5 +30,10 @@
   }
   .home_text_1 {
     font-size: 1.5rem;
+  }
+  .home-iframe {
+    width: 75vw;
+    height: 30rem;
+    margin: 2rem 0;
   }
 }
