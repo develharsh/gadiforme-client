@@ -6,7 +6,7 @@ import { Text, Spinner } from "@chakra-ui/react";
 import { State } from "country-state-city";
 import moment from "moment";
 import { PhoneIcon } from "@chakra-ui/icons";
-import Head from "next/head";
+import Seo from "../../components/seo";
 
 const View = () => {
   const router = useRouter();
@@ -26,9 +26,7 @@ const View = () => {
   }, [_id, trip]);
   return (
     <>
-      <Head>
-        <title>My Trip Details - www.gadiforme.com</title>
-      </Head>
+      <Seo title="My Trip Details - www.gadiforme.com" />
       <div style={{ marginBottom: "10vh" }}>
         <Text fontSize="5xl" textAlign={"center"} mt="2rem" color="#ED64A6">
           Trip Details- GadiForMe Inc.

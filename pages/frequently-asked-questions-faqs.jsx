@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../components/seo";
 
 import {
   Text,
@@ -12,9 +12,7 @@ import {
 const Faqs = () => {
   return (
     <>
-      <Head>
-        <title>Frequently Asked Questions - www.gadiforme.com</title>
-      </Head>
+      <Seo title="Frequently Asked Questions - www.gadiforme.com" />
       <Text fontSize="5xl" textAlign={"center"} my="2rem" color="#000">
         Frequently Asked Questions - FAQs
       </Text>

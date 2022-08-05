@@ -1,11 +1,9 @@
-import Head from "next/head";
+import Seo from "../components/seo";
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <Head>
-        <title>Privacy Policy - www.gadiforme.com</title>
-      </Head>
+      <Seo title="Privacy Policy - www.gadiforme.com" />
       <div className="privacy-policy">
         <h1 className="fwb">Privacy Policy for GadiForMe Inc.</h1>
 

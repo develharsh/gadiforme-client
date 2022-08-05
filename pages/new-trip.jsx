@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../components/seo";
 import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../store/globalstate";
 import { ACTIONS, newTrip } from "../store/actions";
@@ -131,9 +131,7 @@ const Newtrip = () => {
 
   return (
     <>
-      <Head>
-        <title>New Trip - www.gadiforme.com</title>
-      </Head>
+      <Seo title="New Trip - www.gadiforme.com" />
       <Text fontSize="5xl" textAlign={"center"} my="2rem" color="#ED64A6">
         Add Trip Details to Get List of Available Cabs
       </Text>

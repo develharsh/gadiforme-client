@@ -1,11 +1,9 @@
-import Head from "next/head";
+import Seo from "../components/seo";
 
 const Terms = () => {
   return (
     <>
-      <Head>
-        <title>Terms &amp; Conditions - www.gadiforme.com</title>
-      </Head>
+      <Seo title="Terms &amp; Conditions - www.gadiforme.com" />
       <div className="terms-and-conditions">
         <h2>
           <strong>Terms and Conditions</strong>

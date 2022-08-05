@@ -1,11 +1,9 @@
-import Head from "next/head";
+import Seo from "../components/seo";
 
 const Aboutus = () => {
   return (
     <>
-      <Head>
-        <title>About Us - www.gadiforme.com</title>
-      </Head>
+      <Seo title="About Us - www.gadiforme.com" />
       <div className="aboutus">
         Welcome to GadiForMe Inc., your number one source for Trip Vehicles.
         We&apos;re dedicated to giving you the very best of the service, with a

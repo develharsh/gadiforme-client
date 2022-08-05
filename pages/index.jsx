@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../components/seo";
 import {
   Flex,
   Container,
@@ -32,11 +32,7 @@ export default function Index() {
   };
   return (
     <>
-      <Head>
-        <title>
-          India&apos;s Leading Cab &amp; Taxi Provider - www.gadiforme.com
-        </title>
-      </Head>
+      <Seo title="India's Leading Cab &amp; Taxi Provider - www.gadiforme.com" />
       <TheFirstContainer handleMyTrip={handleMyTrip} />
       <TheSecondContainer />
       <TheThirdContainer />
