@@ -7,8 +7,12 @@
 // module.exports = nextConfig;
 module.exports = {
   env: {
-    // baseUrl: "http://localhost:3001",
-    baseUrl: "https://api.gadiforme.com",
+    MONGODB_URL:
+      "mongodb+srv://hvs:thakur@cluster0.dqdk6.mongodb.net/production",
+    FAST2SMS_API_KEY:
+      "Ea2Dxt14qdujiGXCpeTQOb06hWyMZgcP7F5VnLfBrlH9zoSINJafUyLsrA0HNeEDToKhPxvOFj285InQ",
+    // baseUrl: "http://localhost:3000",
+    baseUrl: "https://www.gadiforme.com",
   },
   images: {
     domains: ["media-harsh.fra1.digitaloceanspaces.com"],

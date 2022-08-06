@@ -34,7 +34,7 @@ export const newTrip = async (payload) => {
   try {
     const response = await axios({
       method: "POST",
-      url: `${process.env.baseUrl}/v1/trip/new`,
+      url: `${process.env.baseUrl}/api/trip`,
       data: payload,
     });
     return response.data;
@@ -47,7 +47,7 @@ export const viewTrip = async (_id) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `${process.env.baseUrl}/v1/trip/${_id}`,
+      url: `${process.env.baseUrl}/api/trip/${_id}`,
     });
     return response.data;
   } catch (err) {
