@@ -1,0 +1,15 @@
+.heightBelowNav {
+  margin-top: 2rem;
+}
+/* tab */
+@media (min-width: 40rem) {
+  .heightBelowNav {
+    margin-top: 3.5rem;
+  }
+}
+/*lap */
+@media (min-width: 80rem) {
+  .heightBelowNav {
+    margin-top: 3.5rem;
+  }
+}
