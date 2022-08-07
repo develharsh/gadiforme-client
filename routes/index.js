@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const homeController = require("../controllers/home.controller");
+const tripRoute = require("../routes/trip.route")
 
-router.get("/", require("../controllers/home.controller"));
+router.get("/", homeController);
 
-// router.use("/auth", require("./user.routes"));
+router.use("/trip", tripRoute);
 
 // router.use("/collection", require("./product.routes"));
 
