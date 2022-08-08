@@ -19,6 +19,7 @@ import {
   StatNumber,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { RiEmotionHappyLine } from "react-icons/ri";
 import { BiRupee } from "react-icons/bi";
 import { AiFillSafetyCertificate } from "react-icons/ai";
@@ -31,7 +32,7 @@ export default function Index() {
   };
   return (
     <>
-      <Seo title="India's Leading Cab &amp; Taxi Provider - www.gadifor.me" />
+      <Seo title="India's Leading Cab &amp; Taxi Provider - www.gadiforme.com" />
       <TheFirstContainer handleMyTrip={handleMyTrip} />
       <TheSecondContainer />
       <TheThirdContainer />
@@ -65,7 +66,8 @@ const TheFirstContainer = ({ handleMyTrip }) => {
           &amp; Filter as per your convenience.
         </Text>
         <Stack spacing={6} direction={"row"}>
-            <a href="/new-trip">
+          <Link href="/new-trip">
+            <a>
               <Button
                 rounded={"full"}
                 px={6}
@@ -76,6 +78,7 @@ const TheFirstContainer = ({ handleMyTrip }) => {
                 I want a car
               </Button>
             </a>
+          </Link>
 
           <Button rounded={"full"} px={6} onClick={handleMyTrip}>
             My Trip Details

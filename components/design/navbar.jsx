@@ -21,7 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-// import NextLink from "next/link";
+import NextLink from "next/link";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -64,9 +64,9 @@ export default function WithSubnavigation() {
               fontFamily={"heading"}
               color={"purple.500"}
             >
-              <a className="nav-title" href="/">
-                GadiForMe
-              </a>
+              <NextLink href={"/"}>
+                <a className="nav-title">GadiForMe</a>
+              </NextLink>
             </Text>
 
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
