@@ -12,7 +12,7 @@ module.exports = {
     FAST2SMS_API_KEY:
       "Ea2Dxt14qdujiGXCpeTQOb06hWyMZgcP7F5VnLfBrlH9zoSINJafUyLsrA0HNeEDToKhPxvOFj285InQ",
     // baseUrl: "http://localhost:3000",
-    baseUrl: "https://gadifor.me",
+    baseUrl: "https://www.gadifor.me",
   },
   images: {
     domains: ["media-harsh.fra1.digitaloceanspaces.com"],
