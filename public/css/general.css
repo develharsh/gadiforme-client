@@ -1,15 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+
+.nav-title {
+  font-family: "Bree Serif", serif;
+}
+
 .heightBelowNav {
-  margin-top: 2rem;
+  margin-top: 3.4rem;
 }
 /* tab */
 @media (min-width: 40rem) {
   .heightBelowNav {
-    margin-top: 3.5rem;
+    margin-top: 3.3rem;
   }
 }
 /*lap */
 @media (min-width: 80rem) {
+  .nav-title {
+    margin-top: -3.5px;
+  }
   .heightBelowNav {
-    margin-top: 3.5rem;
+    margin-top: 3.3rem;
   }
 }
