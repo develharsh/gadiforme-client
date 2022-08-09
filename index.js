@@ -2,12 +2,14 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const logger = require("morgan");
+const cors = require("cors");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 const routes = require("./routes");
 
+app.use(cors());
 app.use(logger("dev"));
 
 app.use(require("cookie-parser")());
