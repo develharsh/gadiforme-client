@@ -3,6 +3,9 @@ const app = express();
 const path = require("path");
 const logger = require("morgan");
 const cors = require("cors");
+require("dotenv").config({
+  path: path.join(__dirname, "/configuration", ".env"),
+});
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -10,6 +13,7 @@ app.set("views", path.join(__dirname, "views"));
 const routes = require("./routes");
 
 app.use(cors());
+require("./configuration/database")();
 app.use(logger("dev"));
 
 app.use(require("cookie-parser")());
@@ -27,6 +31,6 @@ app.use((_, res) => {
     .send("<title>404 - Page Not Found</title><h1>Page Not Found</h1>");
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port", 3000);
+app.listen(process.env.PORT, () => {
+  console.log("Server running on port", process.env.PORT);
 });
