@@ -1,0 +1,58 @@
+
+<div
+  class="modal fade"
+  id="queryModal"
+  tabindex="-1"
+  aria-labelledby="queryModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="queryModalLabel">
+          Tell Us Your Contact Info.
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="Name" class="col-form-label">Your Name:</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="Name"
+              placeholder="Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Phone" class="col-form-label"
+              >Your WhatsApp No./Phone No.:</label
+            >
+            <input
+              type="number"
+              name="phone"
+              class="form-control"
+              id="Phone"
+              placeholder="Phone"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          <i class="fa-solid fa-times"></i> Cancel
+        </button>
+        <button type="button" class="btn btn-success" onclick="handleSubmitQueryModal();">
+          <i class="fa-solid fa-paper-plane"></i> Send
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
