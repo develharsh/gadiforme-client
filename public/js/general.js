@@ -27,8 +27,5 @@ const handleSubmitQueryModal = () => {
         text: err.responseJSON.message,
         footer: '<a href="tel:+918077015752">Call for Support</a>',
       });
-      setTimeout(() => {
-        window.location.reload();
-      }, 3500);
     });
 };
