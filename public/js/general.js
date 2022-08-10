@@ -1,5 +1,9 @@
-// const BASE_URL = "http://localhost:3000";
-const BASE_URL = "https://gadifor.me";
+const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "https://gadifor.me";
+
+$(document).ready(function () {
+ 
+});
 
 const handleSubmitQueryModal = () => {
   const Name = $("#Name").val(),

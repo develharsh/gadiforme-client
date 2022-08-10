@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const homeController = require("../controllers/home.controller");
-const tripRoute = require("../routes/trip.route")
+const staticController = require("../controllers/static.pages.controller");
+const tripRoute = require("../routes/trip.route");
 
-router.get("/", homeController);
+router.get("/", staticController.home);
+router.get("/privacy-policy", staticController.privacyPolicy);
+router.get("/terms-and-conditions", staticController.termsNCond);
+router.get("/refund-and-cancellation-policy", staticController.refundNCanc);
+router.get("/about-us", staticController.aboutUs);
 
 router.use("/trip", tripRoute);
 

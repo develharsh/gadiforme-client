@@ -26,9 +26,7 @@ app.use("/", routes);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((_, res) => {
-  res
-    .status(404)
-    .send("<title>404 - Page Not Found</title><h1>Page Not Found</h1>");
+  res.render("pages/404", {});
 });
 
 app.listen(process.env.PORT, () => {

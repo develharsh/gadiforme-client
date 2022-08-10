@@ -79,7 +79,7 @@
     font-size: 1.5rem;
   }
   .home-3-div-1 {
-    margin: 1rem;
+    margin: 1rem 1rem 0 1rem;
     padding: 1rem;
   }
   .home-3-div-1 > div > h3 {
@@ -127,7 +127,7 @@
     font-size: 2rem;
   }
   .home-3-div-1 {
-    margin: 7rem;
+    margin: 7rem 7rem 2rem 7rem;
     padding: 1rem;
   }
   .home-3-div-1 > div > h3 {
@@ -151,3 +151,4 @@
     margin: 2rem 0;
   }
 }
+

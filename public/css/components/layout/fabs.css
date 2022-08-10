@@ -1,0 +1,24 @@
+.fabs > .whatsapp-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  left: auto;
+  top: auto;
+  border: none;
+  background: green;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 10px;
+}
+.fabs > .call-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: auto;
+  left: 1rem;
+  top: auto;
+  border: none;
+  background: blue;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 15px;
+}
