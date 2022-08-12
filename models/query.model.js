@@ -1,6 +1,21 @@
 const mongoose = require("mongoose");
 const { phoneNumber } = require("../utils/validator");
 
+const locationObj = {
+  State: {
+    type: String,
+    required: true,
+  },
+  City: {
+    type: String,
+    required: true,
+  },
+  Place: {
+    type: String,
+    required: true,
+  },
+};
+
 const querySchema = new mongoose.Schema(
   {
     Name: {
@@ -11,6 +26,8 @@ const querySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    From: locationObj,
+    To: locationObj,
   },
   { timestamps: true }
 );
