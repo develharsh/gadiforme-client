@@ -3,7 +3,7 @@ module.exports.visitorMail = async (req, res) => {
   try {
     const sendEmail = require("../utils/sendEmail");
     sendEmail("visitor", {
-      type: req.params.type,
+      message: req.body.message,
       email: "care.gadiforme@gmail.com",
     });
   } catch (err) {

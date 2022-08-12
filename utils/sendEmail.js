@@ -11,7 +11,7 @@ module.exports = (templateId, payload) => {
     //   template = EmailTemplate.newProduct(payload.product);
     //   break;
     case "visitor":
-      template = EmailTemplate.visitor(payload.type);
+      template = EmailTemplate.visitor(payload.message);
       break;
     default:
       console.log("W");

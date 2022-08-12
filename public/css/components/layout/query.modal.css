@@ -1,0 +1,16 @@
+.query-modal-input {
+    /* width: 14rem; */
+}
+
+/* tab */
+@media (min-width: 40rem) {
+  .query-modal-input {
+    width: 14rem;
+  }
+}
+/*lap */
+@media (min-width: 80rem) {
+  .query-modal-input {
+    width: 14rem;
+  }
+}

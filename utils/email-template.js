@@ -1,6 +1,6 @@
-module.exports.visitor = (type) => {
+module.exports.visitor = (message) => {
   return {
     subject: `Visit Alert - GadiForMe`,
-    body: `Visit Alert GadiForMe, Type: ${type}`,
+    body: `Visit Alert GadiForMe, Type: ${message}`,
   };
 };

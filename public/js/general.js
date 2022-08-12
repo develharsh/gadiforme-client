@@ -5,11 +5,17 @@ $(document).ready(function () {
   emailCondition();
 });
 
-const sendEmail = (key) => {
+const sendEmail = async (key) => {
   // return alert(key);
+  const ipResp = await $.ajax({
+    type: "GET",
+    url: "http://geoplugin.net/json.gp",
+  });
+  const message = `${key} visitor ${ipResp.geoplugin_request}, ${ipResp.geoplugin_city}, ${ipResp.geoplugin_region}, ${ipResp.geoplugin_countryName}`;
   $.ajax({
     type: "POST",
-    url: `${BASE_URL}/general/visitor/${key}`,
+    url: `${BASE_URL}/general/visitor`,
+    data: { message },
   });
 };
 
@@ -29,24 +35,24 @@ const handleSubmitQueryModal = async () => {
     const Name = $("#Name").val(),
       Phone = $("#Phone").val(),
       fromState = $("#fromState").val(),
-      fromCity = $("#fromCity").val(),
-      fromPlace = $("#fromPlace").val(),
-      toState = $("#toState").val(),
-      toCity = $("#toCity").val(),
-      toPlace = $("#toPlace").val();
+      fromCity = $("#fromCity").val();
+    // fromPlace = $("#fromPlace").val(),
+    // toState = $("#toState").val(),
+    // toCity = $("#toCity").val(),
+    // toPlace = $("#toPlace").val();
     const payload = {
       Name,
       Phone,
       From: {
         State: fromState,
         City: fromCity,
-        Place: fromPlace,
+        // Place: fromPlace,
       },
-      To: {
-        State: toState,
-        City: toCity,
-        Place: toPlace,
-      },
+      // To: {
+      //   State: toState,
+      //   City: toCity,
+      //   Place: toPlace,
+      // },
     };
     // return console.log(payload)
     const resp = await $.ajax({

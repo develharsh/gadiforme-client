@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 @import url("./components/layout/fabs.css");
+@import url("./components/layout/query.modal.css");
 
 .nav-title {
   font-family: "Bree Serif", serif;

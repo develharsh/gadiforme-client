@@ -8,8 +8,8 @@ module.exports.add = async (req, res) => {
     //SMS
     let message = `New Query GFM ${query.Phone} ${query.Name} ${query._id}`;
     sendSMS(message, ["8077015752"]);
-    message = `Hi ${query.Name},\nWe will contact you Soon\n-Team GadiForMe`;
-    sendSMS(message, [query.Phone]);
+    // message = `Hi ${query.Name},\nWe will contact you Soon\n-Team GadiForMe`;
+    // sendSMS(message, [query.Phone]);
     res.status(201).json({ success: true, message: "Sent Successfully" });
   } catch (error) {
     const response = errorResponse(error);
