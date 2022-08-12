@@ -7,11 +7,12 @@ $(document).ready(function () {
 
 const sendEmail = async (key) => {
   // return alert(key);
-  const ipResp = await $.ajax({
-    type: "GET",
-    url: "http://geoplugin.net/json.gp",
-  });
-  const message = `${key} visitor ${ipResp.geoplugin_request}, ${ipResp.geoplugin_city}, ${ipResp.geoplugin_region}, ${ipResp.geoplugin_countryName}`;
+  // const ipResp = await $.ajax({
+  //   type: "GET",
+  //   url: "http://geoplugin.net/json.gp",
+  // });
+  // const message = `${key} visitor ${ipResp.geoplugin_request}, ${ipResp.geoplugin_city}, ${ipResp.geoplugin_region}, ${ipResp.geoplugin_countryName}`;
+  const message = `${key} visitor`;
   $.ajax({
     type: "POST",
     url: `${BASE_URL}/general/visitor`,
