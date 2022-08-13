@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const staticController = require("../controllers/static.pages.controller");
-const queryRoute = require("../routes/query.route");
-const generalRoute = require("../routes/general.route");
+const queryRoute = require("./query.route");
+const generalRoute = require("./general.route");
+const partnerRoute = require("./partner.route");
 
 router.get("/", staticController.home);
 router.get("/privacy-policy", staticController.privacyPolicy);
@@ -12,6 +13,7 @@ router.get("/about-us", staticController.aboutUs);
 
 router.use("/query", queryRoute);
 router.use("/general", generalRoute);
+router.use("/partner", partnerRoute);
 
 // router.use("/collection", require("./product.routes"));
 
