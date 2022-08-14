@@ -5,17 +5,11 @@ $(document).ready(function () {
   emailCondition();
 });
 
-const sendEmail = async (key) => {
-  // return alert(key);
-  // const ipResp = await $.ajax({
-  //   type: "GET",
-  //   url: "http://geoplugin.net/json.gp",
-  // });
-  // const message = `${key} visitor ${ipResp.geoplugin_request}, ${ipResp.geoplugin_city}, ${ipResp.geoplugin_region}, ${ipResp.geoplugin_countryName}`;
-  const message = `${key} visitor`;
+const sendEmail = async (type, message) => {
+  // return alert(message);
   $.ajax({
     type: "POST",
-    url: `${BASE_URL}/general/visitor`,
+    url: `${BASE_URL}/general/sendmail/${type}`,
     data: { message },
   });
 };
@@ -24,9 +18,9 @@ const emailCondition = () => {
   const visitor = localStorage.getItem("visitor");
   if (!visitor) {
     localStorage.setItem("visitor", new Date().getDay());
-    sendEmail("new");
+    sendEmail("visitor", "new visitor");
   } else if (new Date().getDay() !== Number(visitor)) {
-    sendEmail("regular");
+    sendEmail("visitor", "regular visitor");
     localStorage.setItem("visitor", new Date().getDay());
   }
 };
