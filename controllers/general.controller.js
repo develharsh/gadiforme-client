@@ -6,6 +6,7 @@ module.exports.sendmail = async (req, res) => {
       message: req.body.message,
       email: "care.gadiforme@gmail.com",
     });
+    res.status(200).json({ success: true, message: "Email Alert was sent" });
   } catch (err) {
     errorResponse(res, err);
   }
